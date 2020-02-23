@@ -1,10 +1,13 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Vertex {
 
 	private double realX;
 	private double realY;
 	private double realZ;
 	
-	private Point pointOnScreen;
+	private PixelLocation pointOnScreen;
 	private boolean visible;
 
 	public Vertex(double x, double y, double z) {
@@ -13,9 +16,15 @@ public class Vertex {
 		this.realZ = z;
 	}
 	
-	public void locateOnScreen(Camera camera) {
-		pointOnScreen = camera.locateOnScreen(this);
+	public void locateOnScreen(Camera c) {
+		pointOnScreen = c.locateOnScreen(this);
 		visible = pointOnScreen != null;
+	}
+	
+	public void Render (Camera c, Graphics g) {
+		locateOnScreen(c);
+		g.setColor(Color.RED);
+		g.fillRect(pointOnScreen.getX(), pointOnScreen.getY(), 4, 4);
 	}
 	
 	public double getRealX() {
