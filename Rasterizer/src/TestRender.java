@@ -37,7 +37,17 @@ public class TestRender {
 
 			g.setColor(Color.RED);
 
-
+			Vertex v1 = new Vertex(10, 10, 50);
+			Vertex v2 = new Vertex(20, 10, 50);
+			Vertex v3 = new Vertex(10, 20, 50);
+			
+			Vertex[] v = {v1, v2, v3};
+			
+			Polygon p1 = new Polygon(v);
+			
+			Camera c = new Camera(90, width, height);
+			
+			p1.render(c, g);
 
 			bs.show();
 			g.dispose();

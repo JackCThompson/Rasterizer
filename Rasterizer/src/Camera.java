@@ -23,14 +23,11 @@ public class Camera {
 	}
 	
 	public PixelLocation locateOnScreen(Vertex v) {
-		if (v.getRealZ() > 0) {
+//		if (v.getRealZ() > 0) {
 			int x = (int) (widthOverTanEtc * (v.getRealX() / v.getRealZ())) + (width / 2);
-			int y = (int) (heightOverTanEtc * (v.getRealY() / v.getRealZ())) + (height / 2);
-//			int y = height / 2;
-
+			int y = -(int) (heightOverTanEtc * (v.getRealY() / v.getRealZ())) + (height / 2);
 			return new PixelLocation(x, y);
-		}
-		System.out.println("null");
-		return null;
+//		}
+//		return null;
 	}
 }

@@ -16,9 +16,10 @@ public class Vertex {
 		this.realZ = z;
 	}
 	
-	public void locateOnScreen(Camera c) {
+	public PixelLocation locateOnScreen(Camera c) {
 		pointOnScreen = c.locateOnScreen(this);
-		visible = pointOnScreen != null;
+//		visible = pointOnScreen != null;
+		return pointOnScreen;
 	}
 	
 	public void Render (Camera c, Graphics g) {
