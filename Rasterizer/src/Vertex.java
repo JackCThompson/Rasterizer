@@ -8,7 +8,7 @@ public class Vertex {
 	private double realZ;
 	
 	private PixelLocation pointOnScreen;
-	private boolean visible;
+//	private boolean visible;
 
 	public Vertex(double x, double y, double z) {
 		this.realX = x;
@@ -26,6 +26,16 @@ public class Vertex {
 		locateOnScreen(c);
 		g.setColor(Color.RED);
 		g.fillRect(pointOnScreen.getX(), pointOnScreen.getY(), 4, 4);
+	}
+	
+	public Vertex centerOn(Entity e) {
+		double x = realX - e.getX();
+		double y = realY - e.getY();
+		double z = realZ - e.getZ();
+		
+		// then rotate
+		
+		return new Vertex(x, y, z);
 	}
 	
 	public double getRealX() {

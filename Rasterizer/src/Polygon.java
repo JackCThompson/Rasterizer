@@ -29,4 +29,8 @@ public class Polygon{
 		g.setColor(Color.RED);
 		g.fillPolygon(xPoints, yPoints, vertex.length);
 	}
+	
+	public Vertex[] getVerteces() {
+		return vertex;
+	}
 }

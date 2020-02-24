@@ -1,5 +1,5 @@
 
-public class Camera {
+public class Camera extends Entity{
 	
 	private int width;
 	private int height;
@@ -10,8 +10,7 @@ public class Camera {
 	private double widthOverTanEtc;
 	private double heightOverTanEtc;
 	
-	
-	public Camera(double fov, int width, int height) {
+	public Camera(double fov, int width, int height) {		
 		this.width = width;
 		this.height = height;
 		
